@@ -1,0 +1,4 @@
+test=hoge
+int=123.567
+double = 123.456
+bool= true
