@@ -12,33 +12,33 @@ Setting::Setting( const std::string& aFilename )
 
 	assert( ifs && "setting file does not exist" );
 
-	//	ˆês‚¸‚Â“Ç‚ñ‚Å‚¢‚­
+	//	ä¸€è¡Œãšã¤èª­ã‚“ã§ã„ã
 	while( !ifs.eof() ){
 
-		//	ˆêsæ“¾
+		//	ä¸€è¡Œå–å¾—
 		std::string line;
 		std::getline( ifs, line );
 
-		//	= ‚Å‹æØ‚é‚½‚ß‚É‚¢‚Á‚½‚ñ istringstream ‚Ö
+		//	= ã§åŒºåˆ‡ã‚‹ãŸã‚ã«ã„ã£ãŸã‚“ istringstream ã¸
 		std::istringstream iss( line );
 
-		//	= ‚Ì¶‚ğæ“¾
+		//	= ã®å·¦ã‚’å–å¾—
 		std::string key;
 		std::getline( iss, key, '=' );
 
-		std::istringstream( key ) >> key;//‚±‚¤‚·‚é‚±‚Æ‚Å–³‘Ê‚ÈƒXƒy[ƒX‚ªŒ¸‚é
+		std::istringstream( key ) >> key;//ã“ã†ã™ã‚‹ã“ã¨ã§ç„¡é§„ãªã‚¹ãƒšãƒ¼ã‚¹ãŒæ¸›ã‚‹
 
-		//	= ‚Ì‰E‚ğæ“¾
+		//	= ã®å³ã‚’å–å¾—
 		std::string value;
 		std::getline( iss, value, '=' );
 
-		std::istringstream( value ) >> value;//‚±‚¤‚·‚é‚±‚Æ‚Å–³‘Ê‚ÈƒXƒy[ƒX‚ªŒ¸‚é
+		std::istringstream( value ) >> value;//ã“ã†ã™ã‚‹ã“ã¨ã§ç„¡é§„ãªã‚¹ãƒšãƒ¼ã‚¹ãŒæ¸›ã‚‹
 
 		mMap[ key ] = value;
 	}
 }
 
-//	ˆÈ‰ºA“Áê‰»
+//	ä»¥ä¸‹ã€ç‰¹æ®ŠåŒ–
 template<>
 bool Setting::get< int >( const std::string& aKey, int* aDst ) const
 {

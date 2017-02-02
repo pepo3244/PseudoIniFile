@@ -12,12 +12,12 @@ public:
 	Setting( const std::string& aFilename );
 	virtual ~Setting(){}
 
-	//	–ß‚è’l‚ÅƒL[‚ª‘¶İ‚·‚é‚©‚í‚©‚è‚Ü‚·
+	//	æˆ»ã‚Šå€¤ã§ã‚­ãƒ¼ãŒå­˜åœ¨ã™ã‚‹ã‹ã‚ã‹ã‚Šã¾ã™
 	template< typename T >
 	bool get( const std::string& aKey, T* aDst ) const;
 
-	//	–ß‚è’l‚Å’¼Úó‚¯æ‚è‚Ü‚·
-	//	ƒL[‚ª‘¶İ‚µ‚È‚¯‚ê‚Î—áŠO‚ª”ò‚Ñ‚Ü‚·
+	//	æˆ»ã‚Šå€¤ã§ç›´æ¥å—ã‘å–ã‚Šã¾ã™
+	//	ã‚­ãƒ¼ãŒå­˜åœ¨ã—ãªã‘ã‚Œã°ä¾‹å¤–ãŒé£›ã³ã¾ã™
 	template< typename T >
 	T get( const std::string& aKey ) const;
 
@@ -27,7 +27,7 @@ private:
 
 };
 
-//	“Áê‰»‚µ‚Ä‚Ü‚·
+//	ç‰¹æ®ŠåŒ–ã—ã¦ã¾ã™
 template<>
 bool Setting::get< bool >( const std::string&, bool* ) const;
 template<>
@@ -44,5 +44,5 @@ double Setting::get< double >( const std::string& ) const;
 
 }
 
-//	ˆÈ‰ºAÀ‘•
+//	ä»¥ä¸‹ã€å®Ÿè£…
 #include "SettingPrivate.hpp"
